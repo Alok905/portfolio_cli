@@ -60,7 +60,7 @@ Type 'help' to see available commands.`;
 🚀 projects    - View my projects
 💼 experience  - My work experience
 🎓 education   - My educational background
-🛠️  skills      - Technical skills
+🛠️ skills      - Technical skills
 📧 contact     - Get in touch
 📄 resume      - Download my resume
 🧹 clear       - Clear terminal
