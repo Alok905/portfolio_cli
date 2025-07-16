@@ -138,15 +138,15 @@ ${experience
   .map(
     (exp, index) => `
 🏢 ${exp.company}
-   Position: ${exp.role}
-   Duration: ${exp.duration}
+   👨‍💻 Position: ${exp.role}
+   🗓️ Duration: ${exp.duration}
    
-   ${exp.description}
+   🛠️ Description: ${exp.description}
    
-   Technologies: ${exp.technologies.join(" • ")}
+   🚀 Technologies: ${exp.technologies.join(" • ")}
    
-   Key Achievements:
-   ${exp.achievements.map((achievement) => `   ✓ ${achievement}`).join("\n")}
+   🎯 Key Achievements:
+${exp.achievements.map((achievement) => `      ✔️ ${achievement}`).join("\n")}
    
    ${"─".repeat(35)}
 `
