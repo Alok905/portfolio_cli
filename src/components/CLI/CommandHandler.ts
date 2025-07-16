@@ -73,9 +73,10 @@ Tip: Commands are case-insensitive!`;
   private static formatEducation(): string {
     const { education } = portfolioData;
 
-    return `Education
+    return `
+<span class="text-[#39ff14  ] font-bold">Education
 ${"=".repeat(40)}
-
+</span>
 ${education
   .map(
     (edu, index) => `
@@ -93,9 +94,10 @@ ${education
 
   private static formatAbout(): string {
     const { personal, about } = portfolioData;
-    return `About ${personal.name}
+    return `
+<span class="text-[#39ff14 ] font-bold">About ${personal.name}
 ${"=".repeat(40)}
-
+</span>
 ${about}
 
 Location: ${personal.location}
@@ -107,19 +109,20 @@ Title: ${personal.title}
   private static formatProjects(): string {
     const { projects } = portfolioData;
 
-    return `My Projects
+    return `
+<span class="text-[#39ff14 ] font-bold">My Projects
 ${"=".repeat(40)}
-
+</span>
 ${projects
   .map(
     (project, index) => `
-📦 ${project.name} ${project.status === "in-progress" ? "🚧" : "✅"} 
+📦 ${project.name} ${project.status === "in-progress" ? "🚧 (in-progress)" : "✅ (completed)"} 
    🔖 Type: ${project.type}
    📝 ${project.description}
    
    🛠️ Tech Stack: ${project.stack.join(" • ")}
-   ${project.github ? `🔗 GitHub: ${project.github}` : ""}
-   ${project.demo ? `🌐 Demo: ${project.demo}` : ""}
+   ${project.github ? `🔗 GitHub: <a href="${project.github}" target="_blank" class="text-[#3ff] hover:underline">${project.github}</a>` : ""}
+   ${project.demo ? `🌐 Demo: <a href="${project.demo}" target="_blank" class="text-[#3ff] hover:underline">${project.demo}</a>` : ""}
    ${"─".repeat(40)}
 `
   )
@@ -131,9 +134,10 @@ ${projects
   private static formatExperience(): string {
     const { experience } = portfolioData;
 
-    return `Work Experience
+    return `
+<span class="text-[#39ff14 ] font-bold">Work Experience
 ${"=".repeat(40)}
-
+</span>
 ${experience
   .map(
     (exp, index) => `
@@ -157,8 +161,9 @@ ${exp.achievements.map((achievement) => `      ✔️ ${achievement}`).join("\n"
   private static formatSkills(): string {
     const { skills } = portfolioData;
 
-    return `Technical Skills
-${"=".repeat(40)}
+    return `
+<span class="text-[#39ff14] font-bold">Technical Skills
+${"=".repeat(40)}</span>
 
 💻 Programming Languages
    ${skills.programming.join(" • ")}
@@ -187,9 +192,10 @@ Skill Level: ████████░░ 85% (Always learning!)`;
   private static formatContact(): string {
     const { personal } = portfolioData;
 
-    return `Contact Information
+    return `
+<span class="text-[#39ff14 ] font-bold">Contact Information
 ${"=".repeat(40)}
-
+</span>
 📧 Email: ${personal.email}
 📱 Mobile: ${personal.mobile}
 🐙 GitHub: ${personal.github}

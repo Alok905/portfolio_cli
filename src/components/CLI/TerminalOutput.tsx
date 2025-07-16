@@ -9,8 +9,8 @@ export const TerminalOutput = ({ content }: TerminalOutputProps) => {
   }
 
   return (
-    <pre className="text-terminal-text whitespace-pre-wrap font-mono text-sm leading-relaxed animate-fade-in-up">
-      {content}
+    <pre className="text-terminal-text whitespace-pre-wrap font-mono text-sm leading-relaxed animate-fade-in-up"
+      dangerouslySetInnerHTML={{ __html: content }}>
     </pre>
   );
 };

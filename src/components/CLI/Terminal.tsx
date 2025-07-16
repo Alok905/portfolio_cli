@@ -119,11 +119,11 @@ Last login: ${new Date().toLocaleDateString()} on terminal
                 {/* <span className="text-terminal-prompt mr-2">$</span> */}
                 <div className="flex items-center space-x-2">
                   <TerminalIcon className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium text-terminal-text">
+                  <span className="text-sm font-medium text-terminal-text text-[#98c379]">
                     alok@portfolio😊$
                   </span>
                 </div>
-                <span>{entry.command}</span>
+                <span className="text-[#ffd700]">{entry.command}</span>
               </div>
             )}
             <TerminalOutput content={entry.output} />
