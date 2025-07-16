@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio CLI Design System - Dark Terminal Theme */
+
+@layer base {
+  :root {
+    /* Black/Neon Portfolio Color Palette */
+    --background: 0 0% 8%;             /* #141414 */
+    --foreground: 0 0% 90%;            /* Light gray text */
+    
+    --card: 0 0% 12%;                  /* #1E1E1E */
+    --card-foreground: 0 0% 90%;
+    
+    --popover: 0 0% 15%;               /* #262626 */
+    --popover-foreground: 0 0% 90%;
+    
+    /* Terminal Colors */
+    --terminal-bg: 0 0% 12%;           /* #1E1E1E */
+    --terminal-text: 0 0% 90%;
+    --terminal-prompt: 180 100% 60%;   /* #00CCFF - Cyan */
+    --terminal-success: 120 100% 60%;  /* #00FF66 - Neon Green */
+    --terminal-error: 0 100% 60%;      /* #FF3333 - Neon Red */
+    --terminal-warning: 45 100% 60%;   /* #FFCC00 - Neon Yellow */
+    
+    /* Left Panel */
+    --left-panel: 0 0% 10%;            /* #1A1A1A */
+    --left-panel-foreground: 0 0% 90%;
+    
+    /* Primary/Accent - Neon Cyan */
+    --primary: 180 100% 60%;           /* #00CCFF */
+    --primary-foreground: 0 0% 10%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: 300 100% 60%;            /* #CC00FF - Neon Purple */
+    --accent-foreground: 0 0% 10%;
+    
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 10%;
+    
+    --border: 0 0% 25%;
+    --input: 0 0% 15%;
+    --ring: 180 100% 60%;
+
+    --radius: 0.5rem;
+    
+    /* Terminal Effects */
+    --terminal-glow: 0 0 20px hsl(var(--primary) / 0.3);
+    --text-glow: 0 0 10px hsl(var(--primary) / 0.5);
+    --string-shadow: 0 2px 4px hsl(0 0% 0% / 0.3);
+    
+    /* Animations */
+    --typing-speed: 0.05s;
+    --fade-in: 0.3s ease-out;
+    --bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+}
+
+/* Custom scrollbar styling */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--primary) / 0.3) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--primary) / 0.5);
+}
