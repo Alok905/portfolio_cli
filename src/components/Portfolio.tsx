@@ -15,9 +15,9 @@ export const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen min-w-full bg-background">
       {/* Mobile Layout */}
-      <div className="lg:hidden">
+      {/* <div className="lg:hidden">
         <div className="flex flex-col min-h-screen">
           <Navigation onCommandClick={handleNavCommand} />
           <div className="flex-1 pt-16">
@@ -27,15 +27,15 @@ export const Portfolio = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Desktop Layout */}
-      <div className="hidden lg:flex">
+      <div className="flex">
         {/* Left Panel - Fixed */}
         <LeftPanel />
         
         {/* Right Panel - Terminal */}
-        <div className="flex-1 ml-[33.333333%]">
+        <div className="flex-1">
           {/* <Navigation onCommandClick={handleNavCommand} /> */}
           <div className="">
             <Terminal 

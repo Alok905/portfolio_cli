@@ -11,7 +11,7 @@ interface TerminalPromptProps {
 export const TerminalPrompt = forwardRef<HTMLInputElement, TerminalPromptProps>(
   ({ value, onChange, onKeyPress, isProcessing }, ref) => {
     return (
-      <div className="flex items-center text-terminal-text gap-[.5rem]">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center text-terminal-text gap-[.5rem]">
        <div className="flex items-center space-x-2">
         <TerminalIcon className="w-4 h-4 text-primary" />
         <span className="text-sm font-medium text-terminal-text text-[#98c379]">alok@portfolio😊$</span>

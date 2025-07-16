@@ -60,6 +60,7 @@ Last login: ${new Date().toLocaleDateString()} on terminal
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
     }
+    handleTerminalClick();
   }, [history]);
 
   // Handle external commands from navigation
@@ -108,7 +109,7 @@ Last login: ${new Date().toLocaleDateString()} on terminal
 
       <div
         ref={terminalRef}
-        className="flex-1 p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent font-mono"
+        className="flex-1 p-2 lg:p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent font-mono"
         onClick={handleTerminalClick}
       >
         {/* Command History */}

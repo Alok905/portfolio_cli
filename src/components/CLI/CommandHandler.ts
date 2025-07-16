@@ -212,10 +212,10 @@ Type any command to continue...`;
 <span class="font-bold">Contact Information
 ${"=".repeat(40)}
 </span>
-📧 Email: ${personal.email}
+📧 Email: <a href="mailto:${personal.email}" class="text-[#3ff] hover:underline">${personal.email}</a>
 📱 Mobile: ${personal.mobile}
-🐙 GitHub: ${personal.github}
-💼 LinkedIn: ${personal.linkedin}
+🐙 GitHub: <a href="${personal.github}" target="_blank" class="text-[#3ff] hover:underline">${personal.github}</a>
+💼 LinkedIn: <a href="${personal.linkedin}" target="_blank" class="text-[#3ff] hover:underline">${personal.linkedin}</a>
 📍 Location: ${personal.location}
 
 💡 Open to new opportunities!
