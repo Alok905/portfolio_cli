@@ -43,6 +43,9 @@ export class CommandHandler {
       case "date":
         return new Date().toString();
 
+      case "resume":
+        return this.formatResume();
+
       default:
         return `Command not found: ${command}
 Type 'help' to see available commands.`;
@@ -59,6 +62,7 @@ Type 'help' to see available commands.`;
 🎓 education   - My educational background
 🛠️  skills      - Technical skills
 📧 contact     - Get in touch
+📄 resume      - Download my resume
 🧹 clear       - Clear terminal
 🔍 whoami      - Who are you?
 
@@ -74,7 +78,7 @@ Tip: Commands are case-insensitive!`;
     const { education } = portfolioData;
 
     return `
-<span class="text-[#39ff14  ] font-bold">Education
+<span class="font-bold">Education
 ${"=".repeat(40)}
 </span>
 ${education
@@ -95,7 +99,7 @@ ${education
   private static formatAbout(): string {
     const { personal, about } = portfolioData;
     return `
-<span class="text-[#39ff14 ] font-bold">About ${personal.name}
+<span class="font-bold">About ${personal.name}
 ${"=".repeat(40)}
 </span>
 ${about}
@@ -110,7 +114,7 @@ Title: ${personal.title}
     const { projects } = portfolioData;
 
     return `
-<span class="text-[#39ff14 ] font-bold">My Projects
+<span class="font-bold">My Projects
 ${"=".repeat(40)}
 </span>
 ${projects
@@ -135,7 +139,7 @@ ${projects
     const { experience } = portfolioData;
 
     return `
-<span class="text-[#39ff14 ] font-bold">Work Experience
+<span class="font-bold">Work Experience
 ${"=".repeat(40)}
 </span>
 ${experience
@@ -162,7 +166,7 @@ ${exp.achievements.map((achievement) => `      ✔️ ${achievement}`).join("\n"
     const { skills } = portfolioData;
 
     return `
-<span class="text-[#39ff14] font-bold">Technical Skills
+<span class="font-bold">Technical Skills
 ${"=".repeat(40)}</span>
 
 💻 Programming Languages
@@ -189,11 +193,23 @@ ${"=".repeat(40)}</span>
 Skill Level: ████████░░ 85% (Always learning!)`;
   }
 
+  private static formatResume(): string {
+    return `
+<span class="font-bold">Download Resume
+${"=".repeat(40)}
+</span>
+
+📄 Click here to download my resume:
+<a href="/assets/RESUME_ALOK.pdf" download class="text-[#3ff] hover:underline">RESUME_ALOK.pdf</a>
+
+Type any command to continue...`;
+  }
+
   private static formatContact(): string {
     const { personal } = portfolioData;
 
     return `
-<span class="text-[#39ff14 ] font-bold">Contact Information
+<span class="font-bold">Contact Information
 ${"=".repeat(40)}
 </span>
 📧 Email: ${personal.email}
