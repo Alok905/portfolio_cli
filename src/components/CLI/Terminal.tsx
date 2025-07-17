@@ -80,14 +80,18 @@ Last login: ${new Date().toLocaleDateString()} on terminal
     // Simulate processing delay for realism
     await new Promise((resolve) => setTimeout(resolve, 300));
 
-    setHistory((prev) => [
-      ...prev,
-      {
-        command: command.trim(),
-        output,
-        timestamp: new Date(),
-      },
-    ]);
+    if (output === "CLEAR_HISTORY") {
+      setHistory([]);
+    } else {
+      setHistory((prev) => [
+        ...prev,
+        {
+          command: command.trim(),
+          output,
+          timestamp: new Date(),
+        },
+      ]);
+    }
 
     setCurrentCommand("");
     setIsProcessing(false);

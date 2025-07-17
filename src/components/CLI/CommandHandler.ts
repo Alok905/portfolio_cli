@@ -29,7 +29,7 @@ export class CommandHandler {
         return this.formatContact();
 
       case "clear":
-        return "\x1b[2J\x1b[H"; // ANSI clear screen
+        return "CLEAR_HISTORY"; // Special flag to clear history
 
       case "whoami":
         return portfolioData.commands.whoami;
