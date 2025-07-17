@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import profilePhoto from '../assets/profile-photo.jpg';
+import profilePhoto from '../assets/profile-photo.png';
 
 export const HangingPhoto = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
