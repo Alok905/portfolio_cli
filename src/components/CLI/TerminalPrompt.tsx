@@ -14,7 +14,7 @@ export const TerminalPrompt = forwardRef<HTMLInputElement, TerminalPromptProps>(
       <div className="flex flex-col lg:flex-row items-start lg:items-center text-terminal-text gap-[.5rem]">
        <div className="flex items-center space-x-2">
         <TerminalIcon className="w-4 h-4 text-primary" />
-        <span className="text-sm font-medium text-terminal-text text-[#22c55e]">alok@portfolio😊$</span>
+        <span className="text-sm font-medium text-[#22c55e]">alok@portfolio😊$</span>
       </div>
         <input
           ref={ref}
