@@ -21,7 +21,7 @@ export const Portfolio = () => {
         <LeftPanel />
 
         {/* Right Panel - Terminal */}
-        <div className="flex-1">
+        <div className="flex-1 z-[1]">
           <div className="">
             <Terminal
               externalCommand={commandToExecute}
