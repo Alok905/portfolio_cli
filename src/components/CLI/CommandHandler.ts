@@ -1,4 +1,5 @@
 import { portfolioData } from "../../data/portfolio";
+import resumeFile from "../../assets/RESUME.pdf";
 
 export class CommandHandler {
   static processCommand(command: string): string {
@@ -120,13 +121,18 @@ ${"=".repeat(40)}
 ${projects
   .map(
     (project, index) => `
-📦 ${project.name} ${project.status === "in-progress" ? "🚧 (in-progress)" : "✅ (completed)"} 
+📦 ${project.name} ${
+      project.status === "in-progress" ? "🚧 (in-progress)" : "✅ (completed)"
+    } 
    🔖 Type: ${project.type}
    📝 ${project.description}
    
    🛠️ Tech Stack: ${project.stack.join(" • ")}
-   ${project.github ? `🔗 GitHub: <a href="${project.github}" target="_blank" class="text-[#3ff] hover:underline">${project.github}</a>` : ""}
-   ${project.demo ? `🌐 Demo: <a href="${project.demo}" target="_blank" class="text-[#3ff] hover:underline">${project.demo}</a>` : ""}
+   ${
+     project.demo
+       ? `🌐 Demo: <a href="${project.demo}" target="_blank" class="text-[#3ff] hover:underline">${project.demo}</a>`
+       : ""
+   }
    ${"─".repeat(40)}
 `
   )
@@ -194,13 +200,14 @@ Skill Level: ████████░░ 85% (Always learning!)`;
   }
 
   private static formatResume(): string {
+    const origin = typeof window !== "undefined" ? window.location.origin : "";
     return `
 <span class="font-bold">Download Resume
 ${"=".repeat(40)}
 </span>
 
 📄 Click here to download my resume:
-<a href="/assets/RESUME_ALOK.pdf" download class="text-[#3ff] hover:underline">RESUME_ALOK.pdf</a>
+<a href="${resumeFile}" download="RESUME.pdf" class="text-[#3ff] hover:underline">RESUME</a>
 
 Type any command to continue...`;
   }
@@ -212,10 +219,20 @@ Type any command to continue...`;
 <span class="font-bold">Contact Information
 ${"=".repeat(40)}
 </span>
-📧 Email: <a href="mailto:${personal.email}" class="text-[#3ff] hover:underline">${personal.email}</a>
+📧 Email: <a href="mailto:${
+      personal.email
+    }" class="text-[#3ff] hover:underline">${personal.email}</a>
 📱 Mobile: ${personal.mobile}
-🐙 GitHub: <a href="${personal.github}" target="_blank" class="text-[#3ff] hover:underline">${personal.github}</a>
-💼 LinkedIn: <a href="${personal.linkedin}" target="_blank" class="text-[#3ff] hover:underline">${personal.linkedin}</a>
+🐙 GitHub: <a href="${
+      personal.github
+    }" target="_blank" class="text-[#3ff] hover:underline">${
+      personal.github
+    }</a>
+💼 LinkedIn: <a href="${
+      personal.linkedin
+    }" target="_blank" class="text-[#3ff] hover:underline">${
+      personal.linkedin
+    }</a>
 📍 Location: ${personal.location}
 
 💡 Open to new opportunities!
